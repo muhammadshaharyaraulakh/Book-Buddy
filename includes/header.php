@@ -64,7 +64,7 @@ require __DIR__."/../config/config.php";
                 <li><a href="/index.php">Home</a></li>
                 <li><a href="pages/service.html">Service</a></li>
                 <li><a href="pages/contact.html">Contact</a></li>
-                <li><a href="Pages/book-filter.html">Books</a></li>
+                <li><a href="pages/book-filter.html">Books</a></li>
                 <?php if(empty($_SESSION['id'])): ?>
                 <button class="login"><a href="/auth/login/login.php">Log In</a></button>
                 <button class="signup">

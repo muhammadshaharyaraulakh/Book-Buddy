@@ -13,7 +13,7 @@ $fetch->execute([
 $user = $fetch->fetch(PDO::FETCH_OBJ);
 
 $recommended = getBookDetails($connection, "Recommended For You");
-$popular = getBookDetails($connection, "Popular");
+$popular = getBookDetails($connection, "Popular in 2025");
 
 $fetch = $connection->prepare("
 SELECT 
@@ -80,7 +80,7 @@ $fetch = $connection->prepare("SELECT b.*
 FROM book b
 JOIN categories c 
   ON b.category_id = c.id
-WHERE c.title = 'Featured';
+WHERE c.title = 'Featured Books';
 ");
 $fetch->execute();
 $featuredBooks = $fetch->fetchAll(PDO::FETCH_OBJ);
@@ -382,7 +382,7 @@ $featuredBooks = $fetch->fetchAll(PDO::FETCH_OBJ);
         <div class="img">
           <a href="pages/book-detail.html"><img src="images/book-2.jpg" alt="" /></a>
         </div>
-        <?php foreach (array_slice($featuredBooks, 1, 3) as $book): ?>
+        <?php foreach (array_slice($featuredBooks, 1, 7) as $book): ?>
         <div class="img">
           <a href="pages/book-detail.php?id=<?= $book->id ?>"><img src="images/<?= $book->coverImage ?>" alt="book" /></a>
         </div>
