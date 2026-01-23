@@ -306,7 +306,7 @@ $featuredBooks = $fetch->fetchAll(PDO::FETCH_OBJ);
         <?php foreach($sales as $book): ?>
         <li class="card">
           <div class="img">
-            <a href="Pages/book-detail.php?id=<?= $book->id ?>"><img src="/images/<?= $book->coverImage ?>" alt="book" /></a>
+            <a href="/pages/book-detail.php?id=<?= $book->id ?>"><img src="/images/<?= $book->coverImage ?>" alt="book" /></a>
             <span class="badge"><?= $book->Discount_Percentage ?></span>
           </div>
           <h5><?= $book->title ?></h5>
@@ -379,9 +379,6 @@ $featuredBooks = $fetch->fetchAll(PDO::FETCH_OBJ);
     </div>
     <div class="book-section">
       <div class="container">
-        <div class="img">
-          <a href="pages/book-detail.html"><img src="images/book-2.jpg" alt="" /></a>
-        </div>
         <?php foreach (array_slice($featuredBooks, 1, 7) as $book): ?>
         <div class="img">
           <a href="pages/book-detail.php?id=<?= $book->id ?>"><img src="images/<?= $book->coverImage ?>" alt="book" /></a>

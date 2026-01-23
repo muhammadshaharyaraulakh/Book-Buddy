@@ -6,7 +6,7 @@ $allCategories = getCategories($connection);
     <div class="logo-description">
       <div class="logo">
         <div class="img">
-          <img src="images/logo.png" alt="logo" />
+          <img src="/images/logo.png" alt="logo" />
         </div>
         <div class="title">
           <h4>Book Buddy</h4>
