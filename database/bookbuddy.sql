@@ -193,3 +193,18 @@ VALUES
 ('BOOK20', 20),
 ('NEW30', 30);
 
+CREATE TABLE user_address (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT NOT NULL,
+    province VARCHAR(50) NOT NULL,
+    city VARCHAR(100) NOT NULL,
+    postcode VARCHAR(20) NOT NULL,
+    address TEXT NOT NULL,
+    contact VARCHAR(11) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+
+    FOREIGN KEY (user_id)
+        REFERENCES user(id)
+        ON DELETE CASCADE
+);
+
